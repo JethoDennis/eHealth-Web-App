@@ -1,16 +1,16 @@
-import React, { Component } from 'react'
-import ReactDOM from 'react-dom'
-import Medly from './Medly'
-
+import React, { Component } from "react";
+import Director from "./Director";
+import NavBar from "./NavBar";
+import SideDrawer from "./SideDrawerTools.js";
 
 class App extends Component {
-  render(){
-    return(
-      <div>
-      <Medly />
+  render() {
+    return (
+      <div className="App">
+        <NavBar />
+        <Director />
       </div>
-
-   )
+    );
   }
 }
 

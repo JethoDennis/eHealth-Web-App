@@ -1,10 +1,9 @@
-import React from 'react'
+import React from "react";
 
 class Toggle extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {isToggleOn: true};
-
+    this.state = { isToggleOn: true };
 
     this.handleClick = this.handleClick.bind(this);
   }
@@ -18,10 +17,10 @@ class Toggle extends React.Component {
   render() {
     return (
       <button onClick={this.handleClick}>
-        {this.state.isToggleOn ? 'Android' : 'IOS'}
+        {this.state.isToggleOn ? "Android" : "IOS"}
       </button>
     );
   }
 }
 
-export default Toggle
+export default Toggle;

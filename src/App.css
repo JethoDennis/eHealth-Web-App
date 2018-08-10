@@ -2,19 +2,104 @@
   text-align: center;
 }
 
+.App-rotating {
+  animation: App-rotating-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-Medly {
+  /*border: 1px solid #000;*/
+  text-align: center;
+  width: 50%;
+  max-width: 400px;
+  background-image: url(${MedlyPic.JPG});
+  background-color: #cccccc;
+}
+
+.App-wrapper {
+  display: flex;
+  text-align: center;
+  position: center;
+  justify-content:center;
+  width:80%;
+  margin:auto;
+}
+
+.logo-carousel {
+  position: center;
+  height: auto;
+  cursor: pointer;
+  width: auto;
+}
+.App-Ned {
+  border: 1px solid #000;
+  width: 100%;
+  max-width: 700px;
+  height: auto;
+  background-image: url(${Ned.JPG});
+  background-color: #cccccc;
+  z-index: -2;
+}
+
+.App-BA {
+  border: 1px solid #000;
+  width: 100%;
+  max-width: 650px;
+  height: auto;
+  background-image: url(${BA.JPG});
+  background-color: #cccccc;
+}
+
+.App-ICC {
+  border: 1px solid #000;
+  width: 100%;
+  max-width: 700px;
+  height: auto;
+  background-image: url(${ICC.JPG});
+  background-color: #cccccc;
+}
+
+.App-bant {
+  background-image: url(${logo-bant.svg});
+  align-items: flex-end;
+  width: 100%;
+  max-width: 700px;
+  height: auto;
+  background-color: #cccccc;
+}
+
+.App-slide {
+  text-align: center;
+  background-color: #ff7c4d;
+  position: sticky;
+  padding: 50px;
+  font-family: serif;
+  white-space: nowrap;
+  overflow: hidden;
+  font-size: 2em;
+  animation: type 4s steps(60, end);
+  animation: slide-left 2s;
+}
+
 .App-logo {
   height: 80px;
 }
 
+.Go-Back {
+  display: inline-block;
+  align-items: flex-start;
+}
+
 .App-header {
   background-color: #ff571a;
-  height: 200px;
-  padding: 50px;
+  width: auto;
+  height: auto;
+  padding: 25px;
   color: beige;
 }
 
 .App-title {
-  font-size: 2.0em;
+  font-size: 2em;
 }
 
 .App-intro {
@@ -23,24 +108,56 @@
 }
 
 .App-info {
-  background-color:  #ff7c4d;
-  position: sticky ;
-  height: 180px;
-  padding: 100px;
-  font-family: sans-serif;
-  font-size: 2.0em;
+  background-color: #ff7c4d;
+  justify-content: center;
+  text-align: center;
+
+  height: 300px;
+  padding: 50px;
+  font-family: serif;
+  font-size: 2em;
 }
 
 .btn-default {
-   display: inline-block;
-   align-items: center;
-   background-color: #FFDEAD;
-   height:25px;
-   width:200px;
-   font-family: fantasy;
-
+  position: center;
+  align-items: center;
+  background-color: #b0e0e6;
+  height: 35px;
+  width: 200px;
+  cursor: pointer;
+  font-family: fantasy;
 }
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+
+.btn-platform {
+  display: inline-block;
+  align-items: center;
+  background-color: #32cd32;
+  height: 35px;
+  width: 100px;
+  font-family: fantasy;
+}
+@keyframes App-rotating-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes slide-left {
+  from {
+    margin-left: 25%;
+    width: 25%;
+  }
+  to {
+    margin-left: 0%;
+    width: 92%;
+  }
+}
+
+@keyframes type {
+  from {
+    width: 0;
+  }
 }

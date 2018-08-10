@@ -1,19 +1,78 @@
 import React from 'react'
-import axios from 'axios'
+import ReactDOM from 'react-dom'
+import { Button, Icon } from 'semantic-ui-react'
+import Director from './Director'
 
-export default class Practice extends React.Component {
-        state = {
-          List : []
-        }
-     componentDidMount() {
-       axios.get(`http://hapi.fhir.org/baseDstu3/Organization/uhn`).then(res => {
-         console.log(res);
-         this.setState({ List: res.data });
-       })
-     }
+class Medly extends React.Component {
+  constructor(props) {
+    super(props);
+    this.handleLoginClick = this.handleLoginClick.bind(this);
+    this.handleLogoutClick = this.handleLogoutClick.bind(this);
+    this.state = {Platform: false};
+  }
 
-     render(){
-       return <ul>{this.state.persons.map(List => <li key={List.id}>{List.name}</li>)}
-       </ul>;
-     }
+  handleLoginClick() {
+    this.setState({Platform: true});
+  }
+
+  handleLogoutClick() {
+    this.setState({Platform: false});
+  }
+
+  render() {
+    const Platform = this.state.Platform;
+    let button;
+
+    if (Platform) {
+      button = <LogoutButton onClick={this.handleLogoutClick} />;
+    } else {
+      button = <LoginButton  class = 'btn btn-default' onClick={this.handleLoginClick} />;
+    }
+
+    return (
+      <div>
+        <Greeting Platform={Platform} />
+        {button}
+      </div>
+    );
+  }
 }
+
+function UserGreeting(props) {
+  return <Director/>;
+}
+
+function GuestGreeting(props) {
+  return <h1 className = 'Apps'>Click</h1>;
+}
+
+function Greeting(props) {
+  const Platform = props.Platform;
+  if (Platform) {
+    return <UserGreeting />;
+  }
+  return <GuestGreeting />;
+}
+
+function LoginButton(props) {
+  return (
+    <button onClick={props.onClick}>
+      Login
+    </button>
+  );
+}
+
+function LogoutButton(props) {
+  return (
+    <button onClick={props.onClick}>
+      Logout
+    </button>
+  );
+}
+
+ReactDOM.render(
+  <Medly />,
+  document.getElementById('root')
+);
+
+export default Medly

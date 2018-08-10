@@ -3,10 +3,10 @@ import React from 'react'
 class SearchBar extends React.Component {
   render() {
     return (
-      <form>
+      <div>
         <input type="text" placeholder="Search..." />
         <button>Search</button>
-      </form>
+      </div>
     );
   }
 }
